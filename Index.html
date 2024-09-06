@@ -1,0 +1,573 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Car logo Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="Quiz-Homepage">
+
+    <!-- Main Menu -->
+    <div class="main-menu">
+        <h1 class="Welcome-message">Hello to our quiz app, Have fun!</h1>
+        <div id="user-input">
+            <div class="input-row">
+                <label for="name">Enter your name:</label>
+                <input type="text" id="name" placeholder="Your Name" required>
+            </div>
+            <div class="input-row">
+                <label for="age">Enter your age:&nbsp;&nbsp;&nbsp;</label>
+                <input type="number" id="age" placeholder="Your Age" required>
+            </div>
+            <button id="enter-button">Enter</button>
+        </div>
+    </div>
+
+    <!-- Quiz Categories -->
+    <div id="quiz-categories" style="display: none;">
+        <h2 id="Quiz-cat-title">Quiz Categories</h2>
+        <div id="category-list" class="categories"></div>
+    </div>
+
+    <!--Cars-->
+
+    <div class="quiz-container" id="quiz-cars" style="display: none;">
+        <div class="question" id="question1">
+            <h1 class="Question-title">What is this car?</h1>
+            <div class="image-container">
+                <img src="Car-logo/BMW.png" alt="Car Logo 1">
+            </div>
+            <div class="choices">
+                <div class="choice" data-letter="A" onclick="checkAnswer('Toyota')">Toyota</div>
+                <div class="choice" data-letter="B" onclick="checkAnswer('Ford')">Ford</div>
+                <div class="choice" data-letter="C" onclick="checkAnswer('BMW')">BMW</div>
+                <div class="choice" data-letter="D" onclick="checkAnswer('Mercedes')">Mercedes</div>
+            </div>
+        </div>
+
+        <div class="question" id="question2" style="display: none;">
+            <h1 class="Question-title">What is this car?</h1>
+            <div class="image-container">
+                <img src="Car-logo/Mercedes.png" alt="Car Logo 1">
+            </div>
+            <div class="choices">
+                <div class="choice" data-letter="A" onclick="checkAnswer('Ferrari')">Ferrari</div>
+                <div class="choice" data-letter="B" onclick="checkAnswer('Mercedes')">Mercedes</div>
+                <div class="choice" data-letter="C" onclick="checkAnswer('Aston Martin')">Aston Martin</div>
+                <div class="choice" data-letter="D" onclick="checkAnswer('Fiat')">Fiat</div>
+            </div>
+        </div>
+
+        <div class="question" id="question3" style="display: none;">
+            <h1 class="Question-title">What is this car?</h1>
+            <div class="image-container">
+                <img src="Car-logo/Peugeot.png" alt="Car Logo 1">
+            </div>
+            <div class="choices">
+                <div class="choice" data-letter="A" onclick="checkAnswer('Kia')">Kia</div>
+                <div class="choice" data-letter="B" onclick="checkAnswer('Renault')">Renault</div>
+                <div class="choice" data-letter="C" onclick="checkAnswer('Peugeot')">Peugeot</div>
+                <div class="choice" data-letter="D" onclick="checkAnswer('Porsche')">Porsche</div>
+            </div>
+        </div>
+
+        <div class="question" id="question4" style="display: none;">
+            <h1 class="Question-title">What is this car?</h1>
+            <div class="image-container">
+                <img src="Car-logo/Mclaren.png" alt="Car Logo 1">
+            </div>
+            <div class="choices">
+                <div class="choice" data-letter="A" onclick="checkAnswer('Lamborghini')">Lamborghini</div>
+                <div class="choice" data-letter="B" onclick="checkAnswer('Ferrari')">Ferrari</div>
+                <div class="choice" data-letter="C" onclick="checkAnswer('Mclaren')">Mclaren</div>
+                <div class="choice" data-letter="D" onclick="checkAnswer('Bugatti')">Bugatti</div>
+            </div>
+        </div>
+
+        <div class="question" id="question5" style="display: none;">
+            <h1 class="Question-title">What is this car?</h1>
+            <div class="image-container">
+                <img src="Car-logo/Aston.png" alt="Car Logo 1">
+            </div>
+            <div class="choices">
+                <div class="choice" data-letter="A" onclick="checkAnswer('Aston Martin')">Aston Martin</div>
+                <div class="choice" data-letter="B" onclick="checkAnswer('Rolls Royce')">Rolls Royce</div>
+                <div class="choice" data-letter="C" onclick="checkAnswer('Mitsubishi')">Mitsubishi</div>
+                <div class="choice" data-letter="D" onclick="checkAnswer('Hyundai')">Hyundai</div>
+            </div>
+        </div>
+
+        <div class="question" id="question6" style="display: none;">
+            <h1 class="Question-title">What is this car?</h1>
+            <div class="image-container">
+                <img src="Car-logo/Mercedes.png" alt="Car Logo 1">
+            </div>
+            <div class="choices">
+                <div class="choice" data-letter="A" onclick="checkAnswer('G Wagon')">G Wagon</div>
+                <div class="choice" data-letter="B" onclick="checkAnswer('Brabus')">Brabus</div>
+                <div class="choice" data-letter="C" onclick="checkAnswer('Porsche Cayen')">Porsche Cayen</div>
+                <div class="choice" data-letter="D" onclick="checkAnswer('Lamborghini Urus')">Lamborghini Urus</div>
+            </div>
+        </div>
+
+        <div class="question" id="question7" style="display: none;">
+            <h1 class="Question-title">What is this car?</h1>
+            <div class="image-container">
+                <img src="Car-logo/Nissan.png" alt="Car Logo 1">
+            </div>
+            <div class="choices">
+                <div class="choice" data-letter="A" onclick="checkAnswer('Toyota')">Toyota</div>
+                <div class="choice" data-letter="B" onclick="checkAnswer('Kia')">Kia</div>
+                <div class="choice" data-letter="C" onclick="checkAnswer('Nissan')">Nissan</div>
+                <div class="choice" data-letter="D" onclick="checkAnswer('Alfa Romeo')">Alfa Romeo</div>
+            </div>
+        </div>
+
+        <div class="question" id="question8" style="display: none;">
+            <h1 class="Question-title">What is this car?</h1>
+            <div class="image-container">
+                <img src="Car-logo/Fiat.png" alt="Car Logo 1">
+            </div>
+            <div class="choices">
+                <div class="choice" data-letter="A" onclick="checkAnswer('Toyota')">Toyota</div>
+                <div class="choice" data-letter="B" onclick="checkAnswer('Mclaren')">Mclaren</div>
+                <div class="choice" data-letter="C" onclick="checkAnswer('Fiat')">Fiat</div>
+                <div class="choice" data-letter="D" onclick="checkAnswer('Mercedes')">Mercedes</div>
+            </div>
+        </div>
+
+        <div class="question" id="question9" style="display: none;">
+            <h1 class="Question-title">What is this car?</h1>
+            <div class="image-container">
+                <img src="Car-logo/Infinity.png" alt="Car Logo 1">
+            </div>
+            <div class="choices">
+                <div class="choice" data-letter="A" onclick="checkAnswer('Toyota')">Toyota</div>
+                <div class="choice" data-letter="B" onclick="checkAnswer('Ford')">Ford</div>
+                <div class="choice" data-letter="C" onclick="checkAnswer('BMW')">BMW</div>
+                <div class="choice" data-letter="D" onclick="checkAnswer('Infinity')">Infinity</div>
+            </div>
+        </div>
+
+        <div class="question" id="question10" style="display: none;">
+            <h1 class="Question-title">What is this car?</h1>
+            <div class="image-container">
+                <img src="Car-logo/Volkswagen.png" alt="Car Logo 1">
+            </div>
+            <div class="choices">
+                <div class="choice" data-letter="A" onclick="checkAnswer('VolksWagen')">VolksWagen</div>
+                <div class="choice" data-letter="B" onclick="checkAnswer('BMW')">BMW</div>
+                <div class="choice" data-letter="C" onclick="checkAnswer('Nissan')">Nissan</div>
+                <div class="choice" data-letter="D" onclick="checkAnswer('Toyota')">Toyota</div>
+            </div>
+        </div>
+    </div>
+
+    <!--Movies-->
+
+    <div class="quiz-container" id="quiz-movies" style="display: none;">
+        <div class="question" id="question1">
+            <h1 class="Question-title">Which movie features the character Jack Sparrow?</h1>
+            <div class="image-container">
+                <img src="Movies/jack-sparrow.jpg" alt="Movie Logo 1">
+            </div>
+            <div class="choices">
+                <div class="choice" data-letter="A" onclick="checkAnswer('Inception')">Inception</div>
+                <div class="choice" data-letter="B" onclick="checkAnswer('Pirates of the Caribbean')">Pirates of the Caribbean</div>
+                <div class="choice" data-letter="C" onclick="checkAnswer('The Matrix')">The Matrix</div>
+                <div class="choice" data-letter="D" onclick="checkAnswer('The Avengers')">The Avengers</div>
+            </div>
+        </div>
+
+        <div class="question" id="question2" style="display: none;">
+            <h1 class="Question-title">Who directed the film "Avatar"?</h1>
+            <div class="image-container">
+                <img src="Movies/avatar.png" alt="Movie Logo 2">
+            </div>
+            <div class="choices">
+                <div class="choice" data-letter="A" onclick="checkAnswer('Steven Spielberg')">Steven Spielberg</div>
+                <div class="choice" data-letter="B" onclick="checkAnswer('Christopher Nolan')">Christopher Nolan</div>
+                <div class="choice" data-letter="C" onclick="checkAnswer('James Cameron')">James Cameron</div>
+                <div class="choice" data-letter="D" onclick="checkAnswer('Quentin Tarantino')">Quentin Tarantino</div>
+            </div>
+        </div>
+
+        <div class="question" id="question3" style="display: none;">
+            <h1 class="Question-title">Which film features the famous line, "Here's looking at you, kid"?</h1>
+            <div class="choices">
+                <div class="choice" data-letter="A" onclick="checkAnswer('Citizen Kane')">Citizen Kane</div>
+                <div class="choice" data-letter="B" onclick="checkAnswer('Casablanca')">Casablanca</div>
+                <div class="choice" data-letter="C" onclick="checkAnswer('Gone with the Wind')">Gone with the Wind</div>
+                <div class="choice" data-letter="D" onclick="checkAnswer('The Godfather')">The Godfather</div>
+            </div>
+        </div>
+
+        <div class="question" id="question4" style="display: none;">
+            <h1 class="Question-title">What is the highest-grossing film of all time (as of 2024)?</h1>
+            <div class="choices">
+                <div class="choice" data-letter="A" onclick="checkAnswer('Avatar')">Avatar</div>
+                <div class="choice" data-letter="B" onclick="checkAnswer('Avengers: Endgame')">Avengers: Endgame</div>
+                <div class="choice" data-letter="C" onclick="checkAnswer('Titanic')">Titanic</div>
+                <div class="choice" data-letter="D" onclick="checkAnswer('Star Wars: The Force Awakens')">Star Wars: The Force Awakens</div>
+            </div>
+        </div>
+
+        <div class="question" id="question5" style="display: none;">
+            <h1 class="Question-title">Which movie won the Academy Award for Best Picture in 1994?</h1>
+            <div class="image-container">
+                <img src="Movies/award.png" alt="Movie Logo 5">
+            </div>
+            <div class="choices">
+                <div class="choice" data-letter="A" onclick="checkAnswer('Pulp Fiction')">Pulp Fiction</div>
+                <div class="choice" data-letter="B" onclick="checkAnswer('The Shawshank Redemption')">The Shawshank Redemption</div>
+                <div class="choice" data-letter="C" onclick="checkAnswer('Forrest Gump')">Forrest Gump</div>
+                <div class="choice" data-letter="D" onclick="checkAnswer('The Lion King')">The Lion King</div>
+            </div>
+        </div>
+
+        <div class="question" id="question6" style="display: none;">
+            <h1 class="Question-title">Who played the lead role in "The Wolf of Wall Street"?</h1>
+            <div class="image-container">
+                <img src="Movies/the-wolf-of-the-wall-street.png" alt="Movie Logo 6">
+            </div>
+            <div class="choices">
+                <div class="choice" data-letter="A" onclick="checkAnswer('Tom Cruise')">Tom Cruise</div>
+                <div class="choice" data-letter="B" onclick="checkAnswer('Johnny Depp')">Johnny Depp</div>
+                <div class="choice" data-letter="C" onclick="checkAnswer('Leonardo DiCaprio')">Leonardo DiCaprio</div>
+                <div class="choice" data-letter="D" onclick="checkAnswer('Brad Pitt')">Brad Pitt</div>
+            </div>
+        </div>
+
+        <div class="question" id="question7" style="display: none;">
+            <h1 class="Question-title">Which movie features the song "My Heart Will Go On"?</h1>
+            <div class="image-container">
+                <img src="Movies/my-heart-will-go-on.png" alt="Movie Logo 7">
+            </div>
+            <div class="choices">
+                <div class="choice" data-letter="A" onclick="checkAnswer('A Star is Born')">A Star is Born</div>
+                <div class="choice" data-letter="B" onclick="checkAnswer('The Bodyguard')">The Bodyguard</div>
+                <div class="choice" data-letter="C" onclick="checkAnswer('Titanic')">Titanic</div>
+                <div class="choice" data-letter="D" onclick="checkAnswer('The Greatest Showman')">The Greatest Showman</div>
+            </div>
+        </div>
+
+        <div class="question" id="question8" style="display: none;">
+            <h1 class="Question-title">Which actor starred in the movie "The Revenant"?</h1>
+            <div class="image-container">
+                <img src="Movies/revenant.png" alt="Movie Logo 8">
+            </div>
+            <div class="choices">
+                <div class="choice" data-letter="A" onclick="checkAnswer('Joaquin Phoenix')">Joaquin Phoenix</div>
+                <div class="choice" data-letter="B" onclick="checkAnswer('Matt Damon')">Matt Damon</div>
+                <div class="choice" data-letter="C" onclick="checkAnswer('Leonardo DiCaprio')">Leonardo DiCaprio</div>
+                <div class="choice" data-letter="D" onclick="checkAnswer('Christian Bale')">Christian Bale</div>
+            </div>
+        </div>
+
+        <div class="question" id="question9" style="display: none;">
+            <h1 class="Question-title">Which film features the character Neo?</h1>
+            <div class="image-container">
+                <img src="Movies/neo.png" alt="Movie Logo 9">
+            </div>
+            <div class="choices">
+                <div class="choice" data-letter="A" onclick="checkAnswer('Inception')">Inception</div>
+                <div class="choice" data-letter="B" onclick="checkAnswer('The Matrix')">The Matrix</div>
+                <div class="choice" data-letter="C" onclick="checkAnswer('Dark City')">Dark City</div>
+                <div class="choice" data-letter="D" onclick="checkAnswer('Blade Runner')">Blade Runner</div>
+            </div>
+        </div>
+
+        <div class="question" id="question10" style="display: none;">
+            <h1 class="Question-title">Who directed "Jurassic Park"?</h1>
+            <div class="image-container">
+                <img src="Movies/jurassic-park.png" alt="Movie Logo 10">
+            </div>
+            <div class="choices">
+                <div class="choice" data-letter="A" onclick="checkAnswer('George Lucas')">George Lucas</div>
+                <div class="choice" data-letter="B" onclick="checkAnswer('Steven Spielberg')">Steven Spielberg</div>
+                <div class="choice" data-letter="C" onclick="checkAnswer('James Cameron')">James Cameron</div>
+                <div class="choice" data-letter="D" onclick="checkAnswer('Richard Donner')">Richard Donner</div>
+            </div>
+        </div>
+    </div>
+
+    <!--General knowledge-->
+
+    <div class="quiz-container" id="quiz-general-knowledge" style="display: none;">
+        <div class="question" id="question1">
+            <h1 class="Question-title">What is the capital of France?</h1>
+            <div class="image-container">
+                <img src="General-Knowledge/france.png" alt="Capital City 1">
+            </div>
+            <div class="choices">
+                <div class="choice" data-letter="A" onclick="checkAnswer('Berlin')">Berlin</div>
+                <div class="choice" data-letter="B" onclick="checkAnswer('Paris')">Paris</div>
+                <div class="choice" data-letter="C" onclick="checkAnswer('Madrid')">Madrid</div>
+                <div class="choice" data-letter="D" onclick="checkAnswer('London')">London</div>
+            </div>
+        </div>
+
+        <div class="question" id="question2" style="display: none;">
+            <h1 class="Question-title">Which planet is known as the Red Planet?</h1>
+            <div class="image-container">
+                <img src="General-Knowledge/mars.png" alt="Planet 1">
+            </div>
+            <div class="choices">
+                <div class="choice" data-letter="A" onclick="checkAnswer('Saturn')">Saturn</div>
+                <div class="choice" data-letter="B" onclick="checkAnswer('Venus')">Venus</div>
+                <div class="choice" data-letter="C" onclick="checkAnswer('Mars')">Mars</div>
+                <div class="choice" data-letter="D" onclick="checkAnswer('Jupiter')">Jupiter</div>
+            </div>
+        </div>
+
+        <div class="question" id="question3" style="display: none;">
+            <h1 class="Question-title">Who wrote "To Kill a Mockingbird"?</h1>
+            <div class="image-container">
+                <img src="General-Knowledge/mockingbird.png" alt="Book 1">
+            </div>
+            <div class="choices">
+                <div class="choice" data-letter="A" onclick="checkAnswer('Mark Twain')">Mark Twain</div>
+                <div class="choice" data-letter="B" onclick="checkAnswer('Harper Lee')">Harper Lee</div>
+                <div class="choice" data-letter="C" onclick="checkAnswer('F. Scott Fitzgerald')">F. Scott Fitzgerald</div>
+                <div class="choice" data-letter="D" onclick="checkAnswer('Ernest Hemingway')">Ernest Hemingway</div>
+            </div>
+        </div>
+
+        <div class="question" id="question4" style="display: none;">
+            <h1 class="Question-title">What is the largest ocean on Earth?</h1>
+            <div class="image-container">
+                <img src="General-Knowledge/ocean.png" alt="Ocean 1">
+            </div>
+            <div class="choices">
+                <div class="choice" data-letter="A" onclick="checkAnswer('Indian Ocean')">Indian Ocean</div>
+                <div class="choice" data-letter="B" onclick="checkAnswer('Pacific Ocean')">Pacific Ocean</div>
+                <div class="choice" data-letter="C" onclick="checkAnswer('Atlantic Ocean')">Atlantic Ocean</div>
+                <div class="choice" data-letter="D" onclick="checkAnswer('Arctic Ocean')">Arctic Ocean</div>
+            </div>
+        </div>
+
+        <div class="question" id="question5" style="display: none;">
+            <h1 class="Question-title">Which element has the chemical symbol 'O'?</h1>
+            <div class="image-container">
+                <img src="General-Knowledge/o.jpg" alt="Element 1">
+            </div>
+            <div class="choices">
+                <div class="choice" data-letter="A" onclick="checkAnswer('Gold')">Gold</div>
+                <div class="choice" data-letter="B" onclick="checkAnswer('Oxygen')">Oxygen</div>
+                <div class="choice" data-letter="C" onclick="checkAnswer('Carbon')">Carbon</div>
+                <div class="choice" data-letter="D" onclick="checkAnswer('Silver')">Silver</div>
+            </div>
+        </div>
+
+        <div class="question" id="question6" style="display: none;">
+            <h1 class="Question-title">What is the smallest prime number?</h1>
+            <div class="choices">
+                <div class="choice" data-letter="A" onclick="checkAnswer('1')">1</div>
+                <div class="choice" data-letter="B" onclick="checkAnswer('5')">5</div>
+                <div class="choice" data-letter="C" onclick="checkAnswer('2')">2</div>
+                <div class="choice" data-letter="D" onclick="checkAnswer('3')">3</div>
+            </div>
+        </div>
+
+        <div class="question" id="question7" style="display: none;">
+            <h1 class="Question-title">Which continent is known as the "Dark Continent"?</h1>
+            <div class="choices">
+                <div class="choice" data-letter="A" onclick="checkAnswer('Europe')">Europe</div>
+                <div class="choice" data-letter="B" onclick="checkAnswer('Africa')">Africa</div>
+                <div class="choice" data-letter="C" onclick="checkAnswer('Asia')">Asia</div>
+                <div class="choice" data-letter="D" onclick="checkAnswer('South America')">South America</div>
+            </div>
+        </div>
+
+        <div class="question" id="question8" style="display: none;">
+            <h1 class="Question-title">What is the freezing point of water in Celsius?</h1>
+            <div class="image-container">
+                <img src="General-Knowledge/ice.png" alt="Temperature 1">
+            </div>
+            <div class="choices">
+                <div class="choice" data-letter="A" onclick="checkAnswer('32')">32</div>
+                <div class="choice" data-letter="B" onclick="checkAnswer('-32')">-32</div>
+                <div class="choice" data-letter="C" onclick="checkAnswer('0')">0</div>
+                <div class="choice" data-letter="D" onclick="checkAnswer('100')">100</div>
+            </div>
+        </div>
+
+        <div class="question" id="question9" style="display: none;">
+            <h1 class="Question-title">Who painted the Mona Lisa?</h1>
+            <div class="image-container">
+                <img src="General-Knowledge/mona-lisa.png" alt="Painting 1">
+            </div>
+            <div class="choices">
+                <div class="choice" data-letter="A" onclick="checkAnswer('Vincent van Gogh')">Vincent van Gogh</div>
+                <div class="choice" data-letter="B" onclick="checkAnswer('Leonardo da Vinci')">Leonardo da Vinci</div>
+                <div class="choice" data-letter="C" onclick="checkAnswer('Claude Monet')">Claude Monet</div>
+                <div class="choice" data-letter="D" onclick="checkAnswer('Pablo Picasso')">Pablo Picasso</div>
+            </div>
+        </div>
+
+        <div class="question" id="question10" style="display: none;">
+            <h1 class="Question-title">Which year did the Titanic sink?</h1>
+            <div class="image-container">
+                <img src="General-Knowledge/titanic.png" alt="Historical Event 1">
+            </div>
+            <div class="choices">
+                <div class="choice" data-letter="A" onclick="checkAnswer('1923')">1923</div>
+                <div class="choice" data-letter="B" onclick="checkAnswer('1912')">1912</div>
+                <div class="choice" data-letter="C" onclick="checkAnswer('1898')">1898</div>
+                <div class="choice" data-letter="D" onclick="checkAnswer('1905')">1905</div>
+            </div>
+        </div>
+
+    </div>
+
+    <!--Video Games-->
+
+    <div class="quiz-container" id="quiz-video-games" style="display: none;">
+        <div class="question" id="question1">
+            <h1 class="Question-title">What is the main character's name in "The Legend of Zelda" series?</h1>
+            <div class="image-container">
+                <img src="Video-Games/zelda.png" alt="Character 1">
+            </div>
+            <div class="choices">
+                <div class="choice" data-letter="A" onclick="checkAnswer('Sheik')">Sheik</div>
+                <div class="choice" data-letter="B" onclick="checkAnswer('Link')">Link</div>
+                <div class="choice" data-letter="C" onclick="checkAnswer('Ganondorf')">Ganondorf</div>
+                <div class="choice" data-letter="D" onclick="checkAnswer('Zelda')">Zelda</div>
+            </div>
+        </div>
+
+        <div class="question" id="question2" style="display: none;">
+            <h1 class="Question-title">Which company developed "Super Mario Bros."?</h1>
+            <div class="image-container">
+                <img src="Video-Games/mario.png" alt="Company 1">
+            </div>
+            <div class="choices">
+                <div class="choice" data-letter="A" onclick="checkAnswer('Sony')">Sony</div>
+                <div class="choice" data-letter="B" onclick="checkAnswer('Nintendo')">Nintendo</div>
+                <div class="choice" data-letter="C" onclick="checkAnswer('Capcom')">Capcom</div>
+                <div class="choice" data-letter="D" onclick="checkAnswer('Microsoft')">Microsoft</div>
+            </div>
+        </div>
+
+        <div class="question" id="question3" style="display: none;">
+            <h1 class="Question-title">In which game would you find the character "Master Chief"?</h1>
+            <div class="image-container">
+                <img src="Video-Games/master-chief.png" alt="Game 1">
+            </div>
+            <div class="choices">
+                <div class="choice" data-letter="A" onclick="checkAnswer('Destiny')">Destiny</div>
+                <div class="choice" data-letter="B" onclick="checkAnswer('Battlefield')">Battlefield</div>
+                <div class="choice" data-letter="C" onclick="checkAnswer('Halo')">Halo</div>
+                <div class="choice" data-letter="D" onclick="checkAnswer('Call of Duty')">Call of Duty</div>
+            </div>
+        </div>
+
+        <div class="question" id="question4" style="display: none;">
+            <h1 class="Question-title">Which video game series features the character "Kratos"?</h1>
+            <div class="image-container">
+                <img src="Video-Games/Kratos.jpeg" alt="Game 2">
+            </div>
+            <div class="choices">
+                <div class="choice" data-letter="A" onclick="checkAnswer('The Witcher')">The Witcher</div>
+                <div class="choice" data-letter="B" onclick="checkAnswer('God of War')">God of War</div>
+                <div class="choice" data-letter="C" onclick="checkAnswer('Uncharted')">Uncharted</div>
+                <div class="choice" data-letter="D" onclick="checkAnswer('Assassin\'s Creed')">Assassin's Creed</div>
+            </div>
+        </div>
+
+        <div class="question" id="question5" style="display: none;">
+            <h1 class="Question-title">Which game is known for the phrase "It's dangerous to go alone! Take this."</h1>
+            <div class="choices">
+                <div class="choice" data-letter="A" onclick="checkAnswer('Final Fantasy')">Final Fantasy</div>
+                <div class="choice" data-letter="B" onclick="checkAnswer('Mega Man')">Mega Man</div>
+                <div class="choice" data-letter="C" onclick="checkAnswer('Castlevania')">Castlevania</div>
+                <div class="choice" data-letter="D" onclick="checkAnswer('The Legend of Zelda')">The Legend of Zelda</div>
+            </div>
+        </div>
+
+        <div class="question" id="question6" style="display: none;">
+            <h1 class="Question-title">What is the primary objective in the game "Minecraft"?</h1>
+            <div class="image-container">
+                <img src="Video-Games/minecraft.png" alt="Game 4">
+            </div>
+            <div class="choices">
+                <div class="choice" data-letter="A" onclick="checkAnswer('Defeat Enemies')">Defeat Enemies</div>
+                <div class="choice" data-letter="B" onclick="checkAnswer('Survival and Creativity')">Survival and Creativity</div>
+                <div class="choice" data-letter="C" onclick="checkAnswer('Solve Puzzles')">Solve Puzzles</div>
+                <div class="choice" data-letter="D" onclick="checkAnswer('Race to Finish')">Race to Finish</div>
+            </div>
+        </div>
+
+        <div class="question" id="question7" style="display: none;">
+            <h1 class="Question-title">Which character is known for saying "Wakka Wakka"?</h1>
+            <div class="choices">
+                <div class="choice" data-letter="A" onclick="checkAnswer('Donkey Kong')">Donkey Kong</div>
+                <div class="choice" data-letter="B" onclick="checkAnswer('Pac-Man')">Pac-Man</div>
+                <div class="choice" data-letter="C" onclick="checkAnswer('Sonic')">Sonic</div>
+                <div class="choice" data-letter="D" onclick="checkAnswer('Mario')">Mario</div>
+            </div>
+        </div>
+
+        <div class="question" id="question8" style="display: none;">
+            <h1 class="Question-title">In "The Sims" series, what is the primary focus of gameplay?</h1>
+            <div class="image-container">
+                <img src="Video-Games/sims.png" alt="Game 5">
+            </div>
+            <div class="choices">
+                <div class="choice" data-letter="A" onclick="checkAnswer('Life Simulation')">Life Simulation</div>
+                <div class="choice" data-letter="B" onclick="checkAnswer('Strategy')">Strategy</div>
+                <div class="choice" data-letter="C" onclick="checkAnswer('First-Person Shooter')">First-Person Shooter</div>
+                <div class="choice" data-letter="D" onclick="checkAnswer('Role-Playing')">Role-Playing</div>
+            </div>
+        </div>
+
+        <div class="question" id="question9" style="display: none;">
+            <h1 class="Question-title">Which game series features the character "Lara Croft"?</h1>
+            <div class="image-container">
+                <img src="Video-Games/lara-croft.png" alt="Game 6">
+            </div>
+            <div class="choices">
+                <div class="choice" data-letter="A" onclick="checkAnswer('Tomb Raider')">Tomb Raider</div>
+                <div class="choice" data-letter="B" onclick="checkAnswer('Assassin\'s Creed')">Assassin's Creed</div>
+                <div class="choice" data-letter="C" onclick="checkAnswer('Hitman')">Hitman</div>
+                <div class="choice" data-letter="D" onclick="checkAnswer('Uncharted')">Uncharted</div>
+            </div>
+        </div>
+
+        <div class="question" id="question10" style="display: none;">
+            <h1 class="Question-title">What type of game is "World of Warcraft"?</h1>
+            <div class="image-container">
+                <img src="Video-Games/war-craft.png" alt="Game 7">
+            </div>
+            <div class="choices">
+                <div class="choice" data-letter="A" onclick="checkAnswer('RPG')">RPG</div>
+                <div class="choice" data-letter="B" onclick="checkAnswer('MMORPG')">MMORPG</div>
+                <div class="choice" data-letter="C" onclick="checkAnswer('FPS')">FPS</div>
+                <div class="choice" data-letter="D" onclick="checkAnswer('RTS')">RTS</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="answer-correct" style="display: none;">
+        <p>Congratulations! Your answer is correct.</p>
+        <button onclick="nextQuestion()">Next</button>
+    </div>
+
+    <div class="answer-wrong" style="display: none;">
+        <p>Sorry, your answer is wrong.</p>
+        <button onclick="nextQuestion()">Next</button>
+    </div>
+
+    <div class="score" style="display: none;">
+        <p>Your score: <span id="score">0</span></p>
+        <button class="retry-button" onclick="retryQuiz()">Retry</button>
+        <button class="back-menu-button" onclick="goToMenu()">Back to menu</button>
+        <button class="back-category-button" onclick="goToCategory()">Back to Category menu</button>
+    </div>
+
+    <div id="error-message" style="color: red; display: none;"></div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
